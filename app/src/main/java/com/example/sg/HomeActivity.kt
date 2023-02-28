@@ -15,14 +15,12 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         replaceFragment(Products())
 
-        binding.bottomNavigation.setOnItemReselectedListener {
+        binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.home -> replaceFragment(Products())
                 R.id.profile -> replaceFragment(Profile())
 
-                else -> {
 
-                }
             }
             true
         }

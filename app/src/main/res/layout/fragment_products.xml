@@ -5,8 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".Products">
 
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/saint_gobain_logo"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:text="PRODUCTS"
+        android:textSize="25dp"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="#254A9A"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        />
 </FrameLayout>
