@@ -41,7 +41,7 @@ class MainRepo {
                 }
 
             override fun onFailure(call: Call<ProductDTO>, t: Throwable) {
-                Log.e(TAG,"onResponse: "+t.message)
+                Log.e("varun","onResponse: "+t.message)
                 _getItemModelLiveData.value=null
             }
         })

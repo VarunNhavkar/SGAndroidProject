@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/products">
+    app:startDestination="@id/home">
 
     <fragment
-        android:id="@+id/products"
+        android:id="@+id/home"
         android:name="com.example.sg.Products"
         android:label="fragment_products"
         tools:layout="@layout/fragment_products" />
     <fragment
-        android:id="@+id/profile2"
+        android:id="@+id/profile"
         android:name="com.example.sg.Profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
