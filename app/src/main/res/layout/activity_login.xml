@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/saint_gobain_logo" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/etusername"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Username"
@@ -32,7 +32,7 @@
         android:padding="20dp"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/etpassword"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -42,7 +42,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/etusername"
         android:background="@drawable/edit"
         android:padding="20dp"/>
 
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/etpassword"
         tools:ignore="TextSizeCheck" />
 
     <Button
@@ -70,6 +70,6 @@
         android:text="login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/etpassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

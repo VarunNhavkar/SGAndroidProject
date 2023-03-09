@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sg.Adapter.ProductListAdapter
 import com.example.sg.ViewModel.ProductViewModel
+import com.example.sg.databinding.FragmentProductsBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,10 +32,14 @@ class Products : Fragment() {
 
 
     var productviewmodel: ProductViewModel? = null
-    var recyclerView: RecyclerView? = null
     var adapter: ProductListAdapter? = null
     var layoutManager: LinearLayoutManager? = null
     var dialog: AlertDialog? = null
+
+    private var _binding : FragmentProductsBinding? = null
+    private val binding : FragmentProductsBinding
+        get() = _binding!!
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +52,16 @@ class Products : Fragment() {
 
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentProductsBinding.inflate(layoutInflater)
+        return binding.root
+
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -55,10 +70,9 @@ class Products : Fragment() {
         dialog = context?.let { AlertDialog.Builder(it).setCancelable(false).create() }
         dialog!!.show()
 
-        recyclerView = view.findViewById(R.id.recycler_view)
-        recyclerView!!.setHasFixedSize(true)
+        binding.recyclerView.setHasFixedSize(true)
         layoutManager = LinearLayoutManager(context)
-        recyclerView!!.layoutManager = layoutManager
+        binding.recyclerView.layoutManager = layoutManager
 
         productviewmodel!!.getItemList.observe(viewLifecycleOwner) { itemmodel ->
 //            Log.e("MainActivity","ItemList: "+itemmodel.get(0).title)
@@ -66,11 +80,17 @@ class Products : Fragment() {
             if (itemmodel != null) {
                 adapter = context?.let { ProductListAdapter(it, itemmodel.products) }
                 adapter!!.notifyDataSetChanged()
-                recyclerView!!.adapter = adapter
+                binding.recyclerView.adapter = adapter
                 dialog!!.dismiss()
             }
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }
 
 
